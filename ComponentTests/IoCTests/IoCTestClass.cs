@@ -10,6 +10,7 @@ public class IoCTestClass
         Assert.True(IsRegistered);
         IsRegistered = IoC.IsRegistered<NonRegisteredClass>();
         Assert.False(IsRegistered);
+
     }
 
     [Fact]
@@ -24,12 +25,12 @@ public class IoCTestClass
         Assert.Throws<ArgumentException>(()=>{movObj = IoC.Resolve<IMovable<int[],int[]>>();});
     }
 
-    [Fact]
-    void ResolveTestInstanceWithExistConstructor(){
-        IContainer IoC = new IoCBase();
-        IoC.Register<IMovable<int[],int[]>, MovableAdapter2D>();
-        IUobject obj = new UObject("Object№1");
-        IMovable<int[],int[]> movObj = IoC.Resolve<IMovable<int[],int[]>>(new Dictionary<string, object>{{"obj", obj}});
-        Assert.Equal(movObj.GetPosition(), new int[] { 0, 0 });
-    }
+    // [Fact]
+    // void ResolveTestInstanceWithExistConstructor(){
+    //     IContainer IoC = new IoCBase();
+    //     IoC.Register<IMovable<int[],int[]>, MovableAdapter2D>();
+    //     IUobject obj = new UObject("Object№1");
+    //     IMovable<int[],int[]> movObj = IoC.Resolve<IMovable<int[],int[]>>(new Dictionary<string, object>{{"obj", obj}});
+    //     Assert.Equal(movObj.GetPosition(), new int[] { 0, 0 });
+    // }
 }

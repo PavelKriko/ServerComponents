@@ -14,6 +14,8 @@ public interface IContainer
     public bool IsRegistered<T>(string? instanceName = null);
     public bool IsRegistered(Type type, string? instanceName = null);
 
-    T Resolve<T>(Dictionary<string, object>? kwargs = null, string? instanceName = null);
+    
 
+    T Resolve<T>(Dictionary<string, object>? kwargs = null, string? instanceName = null);
+    
 }

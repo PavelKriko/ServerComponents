@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BusinessProcess>
+    <Validator>
+        <Name>Проверка на валидность</Name>
+        <ErrorHandler>Вывод об ошибке</ErrorHandler>
+        <NextStep>Сравнение</NextStep>
+    </Validator>
+    <Comparison>
+        <Name>Сравнение</Name>
+        <Value>18</Value>
+        <IfTrue>Вывод разрешения</IfTrue>
+        <IfFalse>Вывод запрета</IfFalse>
+    </Comparison>
+    <Handler>
+        <Name>Вывод об ошибке</Name>
+    </Handler>
+    <MsgWriter>
+        <Name>Вывод разрешения</Name>
+        <Text>Вход разрешен</Text>
+    </MsgWriter>
+    <MsgWriter>
+        <Name>Вывод запрета</Name>
+        <Text>Вход запрещен</Text>
+    </MsgWriter>
+</BusinessProcess>
